@@ -376,7 +376,31 @@ export default  [
                 required: false
             }
         ]
-    }
+    },
+
+    // Add this to your existing Templates.tsx file array
+    {
+    name: 'Text to Video Generator',
+    desc: 'Transform your text descriptions into engaging video clips using AI technology.',
+    category: 'Video Generation',
+    icon: 'https://cdn-icons-png.flaticon.com/128/8988/8988906.png',
+    slug: 'text-to-video-generator',
+    aiPrompt: 'Generate a video based on the provided description.',
+    form: [
+        {
+            label: 'Enter your video description',
+            field: 'textarea',
+            name: 'videoPrompt',
+            required: true
+        },
+        {
+            label: 'Additional details (optional)',
+            field: 'textarea',
+            name: 'additionalDetails',
+            required: false
+        }
+    ]
+}
     
 
 
