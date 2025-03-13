@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sky AI - AI-Powered Content Creation Platform
 
-## Getting Started
+Sky AI is an advanced AI-powered content creation platform that helps users generate high-quality blog articles, marketing content, YouTube scripts, and even AI-generated images and videos. Built with **Next.js, React, TypeScript, Tailwind CSS, and Drizzle ORM**, Sky AI integrates multiple AI APIs to provide powerful content automation tools.
 
-First, run the development server:
+## **Features**
+- ✍️ **AI Blog & Article Generator** - Instantly create high-quality blog posts.
+- 🎥 **YouTube SEO & Script Generator** - Generate optimized YouTube scripts.
+- 🖼️ **AI-Powered Image Generation** - Uses Hugging Face API for AI image creation.
+- 📹 **AI Video Generation** - Generate short videos using Hugging Face.
+- 🔄 **Content Rewriter & Improvement** - Rewrite and enhance existing content.
+- 📢 **Instagram & Marketing Tools** - AI-generated social media posts and ads.
+- 🛠 **AI Code Generator & Bug Fixing** - Help developers with AI-powered coding.
+- 🔑 **User Authentication** - Secure login with Clerk.
+- 💳 **Subscription Management** - Manage premium features and billing.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## **Tech Stack**
+- **Frontend:** Next.js (React, TypeScript, Tailwind CSS)
+- **Backend:** Drizzle ORM, Node.js
+- **Authentication:** Clerk
+- **APIs:** Hugging Face, Gemini AI (Google), OpenAI
+- **Database:** PostgreSQL (or any relational DB with Drizzle ORM)
+- **Deployment:** Vercel / Railway / Render
+
+---
+
+## **Installation & Setup**
+
+### **1. Prerequisites**
+Ensure you have the following installed on your system:
+- **Node.js** (LTS recommended) - [Download](https://nodejs.org/)
+- **npm** (comes with Node.js) or **yarn**
+- **Git** - [Download](https://git-scm.com/)
+- **A PostgreSQL database** (or modify the config for another DB)
+
+### **2. Clone the Repository**
+```sh
+$ git clone https://github.com/shettyv985/skyc.git
+$ cd skyc
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **3. Install Dependencies**
+Using npm:
+```sh
+$ npm install
+```
+Or using yarn:
+```sh
+$ yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **4. Set Up Environment Variables**
+Create a **.env** file in the root directory and configure the following:
+```sh
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-key
+CLERK_SECRET_KEY=your-clerk-secret-key
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+DATABASE_URL=your-database-url
 
-## Learn More
+HUGGING_FACE_API_KEY=your-hugging-face-api-key
+HUGGING_FACE_VIDEO_API_KEY=your-hugging-face-video-api-key
 
-To learn more about Next.js, take a look at the following resources:
+GEMINI_API_KEY=your-gemini-api-key
+```
+Make sure to replace the values with actual credentials.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **5. Configure the Database (Drizzle ORM)**
+Run migrations:
+```sh
+$ npx drizzle-kit push
+```
+Or:
+```sh
+$ npm run db:migrate
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **6. Start the Development Server**
+```sh
+$ npm run dev
+```
+Or:
+```sh
+$ yarn dev
+```
+The app should now be running at **http://localhost:3000** 🚀
 
-## Deploy on Vercel
+### **7. Build for Production**
+```sh
+$ npm run build
+$ npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## **Project Structure**
+```
+sky-ai/
+├── .gitignore
+├── README.md
+├── drizzle.config.js
+├── next.config.ts
+├── package.json
+├── tailwind.config.ts
+├── tsconfig.json
+├── app/
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── (auth)/
+│   │   ├── sign-in/[[...sign-in]]/page.tsx
+│   │   ├── sign-up/[[...sign-up]]/page.tsx
+│   ├── (data)/Templates.tsx
+│   ├── dashboard/
+│   │   ├── billing/page.tsx
+│   │   ├── content/[template-slug]/page.tsx
+│   │   ├── history/page.tsx
+│   │   ├── settings/page.tsx
+│   │   ├── _components/
+│   │   │   ├── Header.tsx
+│   │   │   ├── SideNav.tsx
+│   │   │   ├── ImageOutputSection.tsx
+│   │   │   ├── VideoOutputSection.tsx
+│   ├── layout.tsx
+├── components/
+│   ├── ui/
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   ├── json/
+├── public/
+│   ├── file.svg
+│   ├── logo.svg
+│   ├── next.svg
+├── utils/
+│   ├── AiModal.tsx
+│   ├── huggingFaceApi.ts
+│   ├── huggingFaceVideoApi.ts
+│   ├── schema.tsx
+```
+
+---
+
+
+---
+### 🚀 **Enjoy building with Sky AI!**
+
